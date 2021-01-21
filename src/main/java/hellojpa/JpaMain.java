@@ -34,17 +34,15 @@ public class JpaMain {
 
 
             //전체 검색 코드(1~10까지)
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+            /*List<Member> result = em.createQuery("select m from Member as m", Member.class)
                     .setFirstResult(1)
                     .setMaxResults(10)
                     .getResultList();
 
             for (Member member : result) {
                 System.out.println("member.getName() = " + member.getName());
-            }
-            
+            }*/
 
-            
             tx.commit();
 
         } catch (Exception e){

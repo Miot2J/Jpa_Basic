@@ -1,28 +1,38 @@
 package hellojpa;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Member {
 
     @Id
     private Long id;
-    private String name;
 
-    public Long getId() {
-        return id;
+    //객체는 username DB는 name 으로 표기하고 싶을때
+    @Column(name = "name")
+    private String username;
+
+    private Integer age;
+
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+
+    private LocalDate testLocalDate;
+    private LocalDateTime testLocalDateTime;
+
+    @Lob
+    private String description;
+
+    public Member() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
