@@ -49,13 +49,18 @@ public class JpaMain {
 
             Member member = new Member();
             member.setUsername("member1");
-            member.setTeam(team);
+            member.changeTeam(team);
             em.persist(member);
 
-            em.flush();
-            em.clear();
+ /*         양방향 매핑시에는 Team 과 Member 둘 다 연관관계 매핑이 필요햐다.
+            Member.C 의 연관 관계 편의 메소드로 해결하자!
 
-            Member findMember = em.find(Member.class, member.getId());
+            team.getMembers().add(member);
+            */
+//            em.flush();
+//            em.clear();
+
+            Member findMember = em.find(Member.class, member.getId()); //1차 캐시에서 가져옴
             Team findTeam = findMember.getTeam();
             List<Member> members = findMember.getTeam().getMembers();
 
