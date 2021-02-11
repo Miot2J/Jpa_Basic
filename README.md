@@ -63,7 +63,21 @@
 < JPA Mapping Annotation >
 
 + @Column : 컬럼 매핑
+  
+
 + @Enumerated : DB에서 Enum 타입 쓰고싶을때 객체(변수) 위에 선언
+  
+
 + @Temporal : 날짜 타입을 쓸때 객체(변수)위에 선언
+
+  
 + @Lob : DB에 varchar 를 넘어서는 큰 값을 넣고싶을때(BLOB,CLOB 매핑)
+
+  
 + @Transient : 특정 필드를 컬럼에서 제거하고 싶을때(메모리에서만 사용하고 DB에 안넣고 싶을때)
+
+  
++ @Inheritance(strategy=InheritanceType.XXX)
+    + JOINED: 조인 전략
+    + SINGLE_TABLE: 단일 테이블 전략
+    + TABLE_PER_CLASS: 구현 클래스마 테이블 전략
