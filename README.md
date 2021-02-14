@@ -12,7 +12,7 @@
 
 + JPA를 시작할 때 EntityManagerFactory 를 선언해야 한다.
   + persistenceUnitName 은 DB 마다 하나씩 고유 값을 가진다.(persistence.xml 내부에 선언)
-+ Factory 에서 EntityManager 를 선언한다
++ Factory 에서 EntityManager 를 선언한다.
   + 클라이언트의 요청마다 하나의 EntityManager 가 선언되고 EM은 DB 커넥션을 다.
 + JPA는 한 트랜잭션 안에서만 crud 해야한다.
 + *엔티티를 컨트롤러에서 반환하지 말자.**
@@ -26,7 +26,7 @@
 + 쓰기 지연을 지원한다 (persist 시 트랜잭션 commit 전까지 쓰기 지연 sql 저장소에 저장된다.)
   
 
-+ Dirty Checking(변경 감지)를 지원한다
++ Dirty Checking(변경 감지)를 지원한다.
   
 
 + 1차캐시의 엔티티와 스냅샷을 비교후 변경이 있다면 쓰기 지연 sql에 update 쿼리 저장.
