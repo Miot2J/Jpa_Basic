@@ -4,8 +4,9 @@ import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE) 단일 테이블 전략에서 사용한다.
 @DiscriminatorColumn // default 는 DType으로 컬럼명이 들어온다
-public class Item {
+public abstract class Item {
 
     @Id
     @GeneratedValue

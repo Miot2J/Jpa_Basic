@@ -78,6 +78,8 @@
 
   
 + @Inheritance(strategy=InheritanceType.XXX)
-    + JOINED: 조인 전략
-    + SINGLE_TABLE: 단일 테이블 전략
-    + TABLE_PER_CLASS: 구현 클래스마 테이블 전략
+    + JOINED: 조인 전략(기본적으로 쓴다.)
+    + SINGLE_TABLE: 단일 테이블 전략(정말 단순할때 쓴다) 
+      + 쿼리가 한번만 나가도 되는 장점을 가진다.
+    + TABLE_PER_CLASS: 구현 클래스마다 테이블 전략
+        + 클래스가 많아질때는 조회하기가 힘들다.(사용할일 없다)
