@@ -13,7 +13,7 @@ import java.util.List;
         initialValue = 1,
         allocationSize = 50 //50개씩 미리 확보해놔서 동시성 이슈 해결한다.
 )
-public class Member {
+public class Member extends BaseEntitiy{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_generator")
@@ -55,6 +55,8 @@ public class Member {
 
     @Lob
     private String description;*/
+
+
 
     public Member() {
     }
