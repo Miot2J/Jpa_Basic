@@ -56,6 +56,9 @@ public class JpaMain {
             member.changeTeam(team);
             em.persist(member);
 
+            em.flush();
+            em.clear();
+
  /*         양방향 매핑시에는 Team 과 Member 둘 다 연관관계 매핑이 필요햐다.
             Member.C 의 연관 관계 편의 메소드로 해결하자!
 
